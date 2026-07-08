@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+
+# Real lab config (contains instrument IP) - copy from config.example.ini
+config.ini
+*.ini
+!config.example.ini
+
+# Logged data
+data/
+*.csv
+*.png
