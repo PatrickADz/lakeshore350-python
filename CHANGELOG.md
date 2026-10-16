@@ -6,9 +6,6 @@
   `get_heater_range`, `set_heater_range`, `get_pid`, `set_pid`,
   `get_output_mode`, `set_output_mode`, `get_ramp`, `set_ramp`,
   `read_heater_output`, `read_heater_status`.
-- These make the driver usable for temperature *control*, not just monitoring.
-  Not exercised in production at CePIA yet (monitoring-only use case), but
-  implemented and tested against the Model 350 SCPI command set for future use.
 
 ## v1.1.0
 

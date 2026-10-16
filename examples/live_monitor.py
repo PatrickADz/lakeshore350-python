@@ -32,7 +32,8 @@ from datetime import datetime
 from labconfig import add_common_args, resolve_args
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
-from lakeshore350 import LakeShore350, LakeShore350Error  # noqa: E402
+from lakeshore350_driver import LakeShore350  # noqa: E402
+from exceptions import LakeShore350Error  # noqa: E402
 
 
 class NullWriter:

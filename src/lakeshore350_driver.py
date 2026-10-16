@@ -16,7 +16,7 @@ import logging
 import socket
 import time
 
-from .exceptions import LakeShore350Error
+from exceptions import LakeShore350Error
 
 logger = logging.getLogger(__name__)
 

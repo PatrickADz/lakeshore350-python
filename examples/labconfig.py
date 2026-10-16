@@ -2,8 +2,7 @@
 Shared config-loading helper for the example scripts.
 
 Resolution order for every setting: CLI argument > config.ini > built-in
-default. This lets you set up a config.ini once for routine lab use, while
-still being able to override anything ad hoc from the command line.
+default.
 """
 
 import configparser

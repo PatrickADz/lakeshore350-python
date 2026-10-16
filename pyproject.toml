@@ -27,5 +27,5 @@ plot = ["matplotlib"]
 [project.urls]
 Homepage = "https://github.com/PatrickADz/lakeshore350-python"
 
-[tool.setuptools.packages.find]
-where = ["src"]
+[tool.setuptools]
+py-modules = ["lakeshore350_driver", "exceptions"]

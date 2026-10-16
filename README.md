@@ -26,7 +26,7 @@ pip install -e ".[plot]"
 ## Quick start
 
 ```python
-from lakeshore350 import LakeShore350
+from lakeshore350_driver import LakeShore350
 
 with LakeShore350("192.168.1.100") as ls:
     print(ls.get_idn())
@@ -36,16 +36,15 @@ with LakeShore350("192.168.1.100") as ls:
 
 ## Example scripts
 
-The `examples/` folder contains ready-to-run scripts. Configuration for all of
-them is resolved as: **CLI argument > `config.ini` > built-in default** — set
-`config.ini` up once for your routine lab setup, then override anything ad
-hoc from the command line.
+The `examples/` folder contains ready-to-run scripts. Configuration precedence
+is **CLI argument > `config.ini` > built-in default**.
 
 ```bash
 cd examples
 cp ../config.example.ini config.ini
-# edit config.ini: set your instrument's real IP, preferred unit, channel names, etc.
 ```
+
+The configuration file contains the instrument IP, preferred unit, channel names, and acquisition settings.
 
 **Live monitor** (CSV log + optional live plot):
 
@@ -86,33 +85,24 @@ Shows the current sensor type, range, curve, filter, name and temperature
 limit, lets you pick which fields to change and shows valid options for each,
 then asks for confirmation before applying.
 
-> `config.ini` is gitignored — only `config.example.ini` is tracked, so your
-> real instrument IP never ends up in version control.
-
-## Running tests
-
-Tests use a mocked socket, so no physical instrument is required:
-
 ```bash
 pip install -e .
-python tests/test_driver.py
+python Tests/test_driver.py
 ```
 
 ## Repository structure
 
 ```
 lakeshore350-python/
-├── src/lakeshore350/       # the driver (importable package)
-│   ├── driver.py
+├── src/
+│   ├── lakeshore350_driver.py
 │   └── exceptions.py
-├── examples/               # runnable example scripts
-│   ├── labconfig.py        # config.ini + argparse merging helper
+├── examples/
+│   ├── labconfig.py
 │   ├── live_monitor.py
 │   ├── interactive_menu.py
 │   ├── copy_channel_config.py
 │   └── configure_channel.py
-├── tests/
-│   └── test_driver.py
 ├── config.example.ini
 ├── CHANGELOG.md
 └── pyproject.toml

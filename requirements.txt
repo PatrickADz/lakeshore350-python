@@ -1,3 +1,2 @@
-# The driver itself (src/lakeshore350) has no external dependencies.
 # matplotlib is only needed to run examples/live_monitor.py with plotting enabled.
 matplotlib>=3.5

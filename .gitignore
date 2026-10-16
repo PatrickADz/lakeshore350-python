@@ -6,7 +6,6 @@ dist/
 .venv/
 venv/
 
-# Real lab config (contains instrument IP) - copy from config.example.ini
 config.ini
 *.ini
 !config.example.ini
@@ -15,3 +14,7 @@ config.ini
 data/
 *.csv
 *.png
+
+Docs/
+Tests/
+Legacy/ 
